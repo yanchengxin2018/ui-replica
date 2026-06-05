@@ -1,4 +1,4 @@
 interface:
-  display_name: "精准还原UI设计"
+  display_name: "UI还原"
   short_description: "先拆规格稿再编码并通过截图比对逐轮修正的UI还原流程"
-  default_prompt: "使用 $precise-ui-replication 先分析设计图并输出结构化规格稿，再开始实现页面。"
+  default_prompt: "使用 $ui-replica 先分析设计图并输出结构化规格稿，再开始实现页面。"

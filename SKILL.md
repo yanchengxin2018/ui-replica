@@ -1,9 +1,9 @@
 ---
-name: precise-ui-replication
+name: ui-replica
 description: 当用户要求根据 UI 设计图、产品截图、参考图或视觉稿精准还原前端页面时使用。适用于需要先拆结构化规格稿，再用原生 HTML、CSS 和 ES Modules 实现页面，并通过截图对比逐轮修正偏差的任务。
 ---
 
-# Precise UI Replication
+# UI Replica
 
 ## Overview
 
