@@ -139,7 +139,7 @@ assets/
 
 - 统一输出 `128x128` 或 `256x256`，页面中再用 CSS 控制显示尺寸。
 - 文件名使用稳定英文名，例如 `wechat.png`、`qq.png`、`apple.png`、`weibo.png`。
-- 中文名和语义写在配置或 README 中。
+- 中文名和语义写在 `config/icons.json` 的 `label`、`notes` 等字段中。
 - 不要用 `icon1.png`、`new.png` 这类不可维护命名。
 
 ### 7. 观察与复核
@@ -342,7 +342,7 @@ for icon in icons:
 1. 先保存高质量裁剪小图。
 2. 手工或 AI 生成透明背景版本。
 3. 把最终素材放回 `assets/extracted-icons`。
-4. 在 README 中记录“此素材经人工/AI 抠图处理”，不要伪装成脚本完全可复现。
+4. 在 `assets/extracted-icons/config/icons.json` 中记录“此素材经人工/AI 抠图处理”，不要伪装成脚本完全可复现。
 
 ## 验收标准
 
