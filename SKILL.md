@@ -17,6 +17,7 @@ description: 当用户要求根据 UI 设计图、产品截图、参考图或视
 - 输入里包含设计稿截图、登录页视觉稿、活动页参考图、APP 页面截屏。
 - 任务重点是布局、尺寸、位置、颜色、圆角、阴影、透明度、层级、留白的精确还原。
 - 任务重点是还原不规则边框、科技感描边、HUD 外框、异形卡片轮廓。
+- 任务需要从截图中提取图标、按钮标识、品牌标识或小型 UI 素材，并转成可复用透明背景资源。
 - 需要先输出结构化规格稿，再开始写代码。
 
 下面这些情况不要优先用这个 skill：
@@ -136,7 +137,21 @@ description: 当用户要求根据 UI 设计图、产品截图、参考图或视
 
 涉及这类任务时，继续细化的执行细则见 [references/ui-replication-workflow.md](references/ui-replication-workflow.md) 中的“不规则边框与 SVG 坐标还原”。
 
-### 6. Validate By Screenshot Diff
+### 6. Extract Screenshot Icons As Assets
+
+当设计图里的图标不是现成 icon font / lucide 图标，或者截图中的图标样式、颜色、渐变、圆形按钮背景需要精确保留时，不要用近似 SVG 随手替代。应先把图标作为素材提取出来，再放入页面实现。
+
+图标提取按“分析目标 -> 定位裁剪 -> 处理透明背景 -> 提取主体 -> 观察复核 -> 固化配置”的流程执行：
+
+- 先识别图标类型：圆形按钮、圆角方形 App 图标、单色线性图标、复杂品牌图标、背景氛围中的小装饰。
+- 对圆形按钮优先用 Hough 圆检测或人工确认圆心半径，再做圆形 alpha mask。
+- 对白色或单色标识优先用亮度阈值、饱和度约束、连通域过滤和形态学开闭运算提取主体。
+- 同时保留完整按钮版和主体标识版，方便后续分别用于“按原图复刻”和“重组到新背景”。
+- 每次提取都保留 debug 裁剪图、预览图和配置文件，避免素材来源变成不可复现的手工操作。
+
+涉及这类任务时，继续细化的执行细则、函数清单和参数策略见 [references/icon-extraction-workflow.md](references/icon-extraction-workflow.md)。
+
+### 7. Validate By Screenshot Diff
 
 第一版页面目标是骨架正确、主元素齐全、位置关系正确、样式方向正确，不要为了第一版就堆过量细节代码。
 
@@ -176,4 +191,4 @@ description: 当用户要求根据 UI 设计图、产品截图、参考图或视
 
 ## Reference
 
-完整工作流细则和字段说明见 [references/ui-replication-workflow.md](references/ui-replication-workflow.md)。当任务需要更细的约束、验收顺序、禁止事项或不确定项处理方式时，再读取该文件。
+完整工作流细则和字段说明见 [references/ui-replication-workflow.md](references/ui-replication-workflow.md)。图标提取、透明背景处理、截图素材沉淀见 [references/icon-extraction-workflow.md](references/icon-extraction-workflow.md)。当任务需要更细的约束、验收顺序、禁止事项或不确定项处理方式时，再读取对应 reference。
