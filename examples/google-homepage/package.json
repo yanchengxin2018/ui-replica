@@ -1,0 +1,13 @@
+{
+  "name": "google-homepage-replica",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "capture": "node ./scripts/capture.js"
+  },
+  "devDependencies": {
+    "serve-handler": "^6.1.6",
+    "sharp": "^0.34.2"
+  }
+}

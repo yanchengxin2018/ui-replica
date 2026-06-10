@@ -1,0 +1,375 @@
+:root {
+  --page-width: 1109px;
+  --page-height: 652px;
+  --page-bg: #ffffff;
+  --frame-border: #dfe1e5;
+  --text-main: #1f1f1f;
+  --text-soft: #3c4043;
+  --text-link: #1a0dab;
+  --button-bg: #f8f9fa;
+  --button-text: #3c4043;
+  --footer-bg: #f2f2f2;
+  --footer-border: #dadce0;
+  --search-border: #dfe1e5;
+  --search-shadow: 0 1px 6px rgba(32, 33, 36, 0.16);
+  --font-ui: Arial, "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: var(--font-ui);
+}
+
+body {
+  display: grid;
+  place-items: start center;
+  padding: 4px 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+}
+
+#app {
+  width: var(--page-width);
+  height: var(--page-height);
+}
+
+.page-shell,
+.page-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.page-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--page-bg);
+  border: 1px solid var(--frame-border);
+  border-radius: 14px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  padding: 12px 12px 0 0;
+  color: var(--text-main);
+}
+
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-right: 12px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.top-link {
+  color: #202124;
+}
+
+.apps-button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  gap: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.apps-grid::before,
+.apps-grid::after {
+  content: "";
+}
+
+.apps-grid,
+.apps-grid::before,
+.apps-grid::after {
+  background-image:
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px),
+    radial-gradient(circle, #5f6368 1.8px, transparent 2px);
+  background-size: 4px 4px;
+  background-position:
+    0 0,
+    8px 0,
+    16px 0,
+    0 8px,
+    8px 8px,
+    16px 8px,
+    0 16px,
+    8px 16px,
+    16px 16px;
+  background-repeat: no-repeat;
+}
+
+.account-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.account-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.google-logo {
+  width: 276px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.search-shell {
+  display: flex;
+  align-items: center;
+  width: 689px;
+  height: 51px;
+  margin-top: 30px;
+  padding: 0 13px 0 13px;
+  border: 1px solid var(--search-border);
+  border-radius: 25px;
+  box-shadow: var(--search-shadow);
+}
+
+.search-left-button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.search-plus {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.search-plus::before,
+.search-plus::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  width: 2.2px;
+  height: 18px;
+  border-radius: 2px;
+  background: #202124;
+}
+
+.search-plus::after {
+  left: 0;
+  top: 8px;
+  width: 18px;
+  height: 2.2px;
+}
+
+.search-divider {
+  width: 1px;
+  height: 24px;
+  margin-left: 6px;
+  background: #dadce0;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  height: 26px;
+}
+
+.search-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #202124;
+}
+
+.tool-icon {
+  display: grid;
+  place-items: center;
+}
+
+.tool-icon svg {
+  width: 23px;
+  height: 23px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tool-mic svg path:first-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.tool-lens svg circle {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ai-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 101px;
+  height: 36px;
+  padding: 0 14px 0 11px;
+  border-left: 1px solid #dadce0;
+  border-radius: 20px;
+  color: #3c4043;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.ai-icon {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  color: #202124;
+}
+
+.tool-ai svg path:first-child {
+  fill: none;
+}
+
+.ai-label {
+  font-size: 14px;
+  line-height: 1;
+  color: #3c4043;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 11px;
+  margin-top: 31px;
+}
+
+.action-button {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 4px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.language-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 48px 0 0;
+  color: #4d5156;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.language-link {
+  color: var(--text-link);
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--footer-bg);
+  color: #1f1f1f;
+}
+
+.footer-region {
+  height: 51px;
+  padding-left: 31px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--footer-border);
+  font-size: 15px;
+  line-height: 51px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 31px 0 32px;
+}
+
+.footer-links-left,
+.footer-links-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-links-left {
+  gap: 30px;
+}
+
+.footer-links-right {
+  gap: 32px;
+}
+
+.footer-link {
+  color: #1f1f1f;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+}
