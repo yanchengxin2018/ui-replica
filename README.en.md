@@ -57,23 +57,21 @@ The workflow is:
 
 This makes it possible to pursue high fidelity without turning semantically important layout into a pile of brittle bitmap fragments.
 
-## Quick Start With The Example
+## How To Browse The Example Quickly
 
-Using `examples/google-homepage`:
+Using `examples/google-homepage`, you can understand the example just by opening these files:
 
-```bash
-cd examples/google-homepage
-npm install
-npm run capture
-```
+- [`overview.png`](./examples/google-homepage/overview.png): side-by-side overview of the reference and recreated result
+- [`spec.md`](./examples/google-homepage/spec.md): the structured spec
+- [`index.html`](./examples/google-homepage/index.html), [`main.js`](./examples/google-homepage/main.js), [`styles/main.css`](./examples/google-homepage/styles/main.css): the page implementation
 
-This generates `preview.png`. The script starts a local static server and captures the page in a headless browser so you can compare it directly against the reference image.
+If you want screenshot-based verification, then look at [`scripts/capture.js`](./examples/google-homepage/scripts/capture.js). It is only for recapturing the page and refining the visual match, not a requirement for understanding the repository.
 
 ## If You Want To Reuse The Workflow
 
-At its core, this repository is a Codex `ui-replica` skill that turns "rebuild this UI from an image" into a more disciplined engineering workflow.
+This repository packages a reusable workflow for rebuilding UI from images in a more disciplined and repeatable way.
 
-The full rules live in [`SKILL.md`](./SKILL.md), with supporting references in:
+The main guide lives in [`SKILL.md`](./SKILL.md), with supporting references in:
 
 - [`references/ui-replication-workflow.md`](./references/ui-replication-workflow.md)
 - [`references/icon-extraction-workflow.md`](./references/icon-extraction-workflow.md)
@@ -81,6 +79,6 @@ The full rules live in [`SKILL.md`](./SKILL.md), with supporting references in:
 ## Repository Structure
 
 - `examples/`: examples and directly viewable results
-- `SKILL.md`: the full skill definition and hard constraints
+- `SKILL.md`: the main guide and hard constraints
 - `references/`: detailed workflow and asset extraction notes
 - `agents/`: related agent configuration

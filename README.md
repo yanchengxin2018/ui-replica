@@ -59,21 +59,19 @@
 
 ## 怎么快速查看示例
 
-以 `examples/google-homepage` 为例：
+以 `examples/google-homepage` 为例，直接查看这些文件就够了：
 
-```bash
-cd examples/google-homepage
-npm install
-npm run capture
-```
+- [`overview.png`](./examples/google-homepage/overview.png)：参考图和还原结果总览
+- [`spec.md`](./examples/google-homepage/spec.md)：结构化规格稿
+- [`index.html`](./examples/google-homepage/index.html)、[`main.js`](./examples/google-homepage/main.js)、[`styles/main.css`](./examples/google-homepage/styles/main.css)：页面实现
 
-执行后会生成 `preview.png`。这一步会启动本地静态服务，再用无头浏览器截图，方便继续和参考图对比。
+如果你需要做截图验证，再看 [`scripts/capture.js`](./examples/google-homepage/scripts/capture.js)。它只是用于回拍页面和继续做视觉校正，不是理解这个仓库的前提。
 
 ## 如果你是来复用这套流程
 
-这个仓库本质上是一个给 Codex 使用的 `ui-replica` skill，用来把“看图写页面”变成一条更稳定的工程流程。
+这个仓库整理的是一套可复用的“看图写页面”工作流，用来把高保真 UI 还原变成更稳定的工程过程。
 
-完整规则在 [`SKILL.md`](./SKILL.md)，细化文档在：
+主说明在 [`SKILL.md`](./SKILL.md)，细化文档在：
 
 - [`references/ui-replication-workflow.md`](./references/ui-replication-workflow.md)
 - [`references/icon-extraction-workflow.md`](./references/icon-extraction-workflow.md)
@@ -81,6 +79,6 @@ npm run capture
 ## 仓库结构
 
 - `examples/`：示例和可直接查看的效果
-- `SKILL.md`：完整技能说明和硬规则
+- `SKILL.md`：主说明和硬规则
 - `references/`：还原流程、图标提取等细化文档
 - `agents/`：相关 agent 配置
